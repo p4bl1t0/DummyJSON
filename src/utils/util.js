@@ -13,6 +13,7 @@ const data = {
   carts: [],
   users: [],
   quotes: [],
+  books: [],
   todos: [],
   posts: [],
   comments: [],
@@ -66,6 +67,7 @@ utils.loadDataInMemory = async () => {
   const cartsPath = path.join(baseDir, 'carts.json');
   const usersPath = path.join(baseDir, 'users.json');
   const quotesPath = path.join(baseDir, 'quotes.json');
+  const booksPath = path.join(baseDir, 'books.json');
   const todosPath = path.join(baseDir, 'todos.json');
   const postsPath = path.join(baseDir, 'posts.json');
   const commentsPath = path.join(baseDir, 'comments.json');
@@ -75,6 +77,7 @@ utils.loadDataInMemory = async () => {
     fs.readFile(cartsPath, 'utf-8'),
     fs.readFile(usersPath, 'utf-8'),
     fs.readFile(quotesPath, 'utf-8'),
+    fs.readFile(booksPath, 'utf-8'),
     fs.readFile(todosPath, 'utf-8'),
     fs.readFile(postsPath, 'utf-8'),
     fs.readFile(commentsPath, 'utf-8'),
@@ -85,6 +88,7 @@ utils.loadDataInMemory = async () => {
     cartsStr,
     usersStr,
     quotesStr,
+    booksStr,
     todosStr,
     postsStr,
     commentsStr,
@@ -94,6 +98,7 @@ utils.loadDataInMemory = async () => {
   const cartsArr = JSON.parse(cartsStr);
   const usersArr = JSON.parse(usersStr);
   const quotesArr = JSON.parse(quotesStr);
+  const booksArr = JSON.parse(booksStr);
   const todosArr = JSON.parse(todosStr);
   const postsArr = JSON.parse(postsStr);
   const commentsArr = JSON.parse(commentsStr);
@@ -102,6 +107,7 @@ utils.loadDataInMemory = async () => {
   data.carts = cartsArr;
   data.users = usersArr;
   data.quotes = quotesArr;
+  data.books = booksArr;
   data.todos = todosArr;
   data.posts = postsArr;
   data.comments = commentsArr;
